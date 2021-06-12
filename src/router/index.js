@@ -1,23 +1,33 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-
+import recommend from "../views/recommend.vue"
+import singer from "../views/singer.vue"
+import topList from "../views/topList.vue"  
+import search from "../views/search.vue"
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    redirect: "/recommend"
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: "/recommend",
+    component: recommend
+  },
+  {
+    path: "/singer",
+    component: singer
+  },
+  {
+    path: "/top-list",
+    component: topList
+  },
+  {
+    path: "/search",
+    component: search
   }
 ]
 
 const router = createRouter({
+  linkActiveClass: "active",//更改router-link被激活时的类，设置这个类样式使得router-link激活时显示样式
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
