@@ -20,7 +20,8 @@ export default {
   *{
     margin: 0;
     padding: 0;
+    color: #909090;
     text-decoration: none;
-    background-color: black;
+    background-color: #222222;
   }
 </style>

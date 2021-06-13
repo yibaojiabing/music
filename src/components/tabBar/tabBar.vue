@@ -46,11 +46,12 @@ export default{
     width: 100%;
     height: 33px;
     line-height: 33px;
+    padding: 5px 0;
     text-align: center;
     color: cornsilk;
   }
   .active{
-    color:orange
+    color:#efcf40;
   }
 
 </style>

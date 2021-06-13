@@ -15,7 +15,7 @@ export default{
     height: 44px;
     line-height: 44px;
     text-align: center;
-    background-color: black;
+    background-color: #222;
   }
   .hlogo{
     display: inline-block;
@@ -27,7 +27,7 @@ export default{
   }
   .htitle{
     display: inline-block;
-    color:goldenrod;
+    color:#efcf40;
     margin-left: 5px;
   }
 </style>

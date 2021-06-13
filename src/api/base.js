@@ -19,9 +19,9 @@ import axios from "axios";
 //   })
 // }
 
-export function getSinger(){
-  return axios.get("/top/artists").then((res)=>{
-      console.log(res)
+export function get(url){
+  return axios.get(url).then((res)=>{
+    return res;
   }).catch((e)=>{
     console.log(e);
   })
