@@ -75,8 +75,11 @@ export default{
   }
   .des{
     /* width: 193px; */
-    height: 85px;
-    white-space: wrap;
+    /* height: 85px; */
+    /* white-space: wrap; */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
     overflow: hidden;
 		text-overflow: ellipsis;
   }
