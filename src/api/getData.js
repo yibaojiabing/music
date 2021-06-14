@@ -7,7 +7,7 @@ export function getSinger(){
 export function getBanners(){
   return get("/banner")
 }
-//获取与热门歌单数据
-export function getpopSongList(){
-  return get("/playlist/hot")
+//获取推荐页热门歌单数据
+export function getPopSongList(){
+  return get("/top/playlist")
 }

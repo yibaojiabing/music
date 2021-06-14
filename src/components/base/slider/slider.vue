@@ -1,27 +1,11 @@
 <template>
-  <!-- <div class="banners">
-  <div class="slider">
-    <div class="slider-item" v-if="banners.length" v-for="(item,index) in banners" :key="index">
-      <a :href="item.targetId">
-        <img :src="item.imageUrl" alt="">
-      </a>
-    </div>
-  </div>
-  
-  </div> -->
-
-  <div>
-  <van-swipe class="my-swipe slider" :autoplay="3000" indicator-color="white">
-    <van-swipe-item class="slider-item" v-if="banners.length" v-for="(item,index) in banners" :key="index">
+  <van-swipe class="my-swipe slider" stop-propagation="false" v-if="banners.length" :autoplay="3000" indicator-color="white">
+    <van-swipe-item class="slider-item" v-for="(item,index) in banners" :key="index">
       <a :href="item.targetId">
         <img :src="item.imageUrl" alt="">
       </a>
     </van-swipe-item>
   </van-swipe>
-  <!-- <ul class="list">
-      <li class="list-item" v-for="(item,index) in banners.length"></li>
-  </ul> -->
-  </div>
 </template>
 <script>
 import { getBanners } from "../../../api/getData"
@@ -31,6 +15,7 @@ export default{
     return {
       banners: [],
       currentIndex: 0,
+      
     }
   },
   created() {
@@ -47,7 +32,7 @@ export default{
   }
   .slider{
     width: 100%;
-    height: 154px;
+    height: auto;
     position: relative;
     /* float: left; */
     overflow: hidden;

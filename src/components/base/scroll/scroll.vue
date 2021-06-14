@@ -9,16 +9,16 @@
 import BScroll from 'better-scroll'
 export default{
     name: 'Scroll',
-    props:{
-        probeType:{
-            type: Number,
-            default: 0  
-        },
-        pullUpLoad:{
-            type:Boolean,
-            default: true
-        }
-    },
+    // props:{
+    //     probeType:{
+    //         type: Number,
+    //         default: 0  
+    //     },
+    //     pullUpLoad:{
+    //         type:Boolean,
+    //         default: true
+    //     }
+    // },
     data(){
         return{
             scroll: null,
@@ -27,31 +27,31 @@ export default{
     mounted(){
         //创建BScroll对象
         this.scroll = new BScroll(this.$refs.wra,{
-            probeType: this.probeType,
-            click: true,
-            pullUpLoad: true,
-            observeDOM: true,
-            observeImage: true
+            // probeType: this.probeType,
+            // click: true,
+            // pullUpLoad: true,
+            // observeDOM: true,
+            // observeImage: true
         })
-        //监听滚动位置
-        this.scroll.on("scroll",(position)=>{
-            this.$emit('scroll',position)
-        })
-        // 监听上拉事件
-        this.scroll.on('pullingUp',()=>{
-            this.$emit('pullingUp')
-        })
-    },
-    methods: {
-        scrollTo(x,y,time=300){
-            this.scroll.scrollTo(x,y,time)
-        },
-        refresh(){
-            this.scroll.refresh()
-        },
-        getY() {
-            return this.scroll ? this.scroll.y : 0
-        }
+    //     //监听滚动位置
+    //     this.scroll.on("scroll",(position)=>{
+    //         this.$emit('scroll',position)
+    //     })
+    //     // 监听上拉事件
+    //     this.scroll.on('pullingUp',()=>{
+    //         this.$emit('pullingUp')
+    //     })
+    // },
+    // methods: {
+    //     scrollTo(x,y,time=300){
+    //         this.scroll.scrollTo(x,y,time)
+    //     },
+    //     refresh(){
+    //         this.scroll.refresh()
+    //     },
+    //     getY() {
+    //         return this.scroll ? this.scroll.y : 0
+    //     }
     }
 }
 </script>
