@@ -29,6 +29,14 @@ export default{
   },
   methods:{
     itemClick(index){
+      this.$router.push("/songListDetails/"+this.playList[index].id)
+      //另外一种方式
+      // this.$router.push({
+      //   path: '/songListDetails',
+      //   query: {
+      //     id: this.playList[index].id
+      //   }
+      // })
       console.log(this.playList[index].id);
       
     }
@@ -62,7 +70,7 @@ export default{
     margin-left: 20px;
   }
   p{
-    width: 230px;
+    width: 200px;
     margin: 10px 0;
   }
   .title{
@@ -74,9 +82,10 @@ export default{
 		text-overflow: ellipsis;
   }
   .des{
-    /* width: 193px; */
-    /* height: 85px; */
-    /* white-space: wrap; */
+    /* width: 193px;
+    height: 85px;
+    white-space: wrap; */
+    /* overflow: hidden; */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;

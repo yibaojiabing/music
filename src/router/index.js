@@ -3,6 +3,7 @@ import recommend from "../views/recommend.vue"
 import singer from "../views/singer.vue"
 import topList from "../views/topList.vue"  
 import search from "../views/search.vue"
+import songListDetails from "../components/songList/songListDetails.vue"
 const routes = [
   {
     path: "/",
@@ -23,6 +24,10 @@ const routes = [
   {
     path: "/search",
     component: search
+  },
+  {
+    path: "/songListDetails/:id",
+    component: songListDetails
   }
 ]
 

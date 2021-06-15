@@ -1,4 +1,4 @@
-import { get } from './base'
+import { get , getForId , getForIds } from './base'
 //获取歌手信息
 export function getSinger(){
   return get("/top/artists")
@@ -9,5 +9,17 @@ export function getBanners(){
 }
 //获取推荐页热门歌单数据
 export function getPopSongList(){
-  return get("/top/playlist")
+  return get("/top/playlist/highquality")
+}
+//获取歌单详细数据
+export function getSongListDetails(id){
+  return getForId("/playlist/detail",id)
+}
+//获取热门歌手列表数据
+export function getHotSingerList(){
+  return get("/artist/list")
+}
+//获取歌单的歌曲列表
+export function getSongList(id){
+  return getForIds("/song/detail",id)
 }
