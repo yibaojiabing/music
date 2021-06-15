@@ -1,7 +1,7 @@
 <template>
   <div class="artist">
     <div class="singerItem" v-if="singerList.length" v-for="(item,index) in singerList" :key="index">
-      <a :href="item.id">
+      <a :href="item.id" @click="singerClick(index)">
         <img :src="item.img1v1Url" alt="">
         <span class="singerName">{{item.name}}</span>
       </a>
@@ -27,11 +27,19 @@ export default{
       console.log(this.singerList);
       
     })
+  },
+  methods: {
+    singerClick(index){
+      this.$router.push("/singerdetails/"+this.singerList[index].id)
+      console.log(this.singerList[index].id);
+      
+    }
   }
 
 }
 </script>
 <style scoped>
+  
   .singerItem{
     width: 100%;
     margin: 10px 0;

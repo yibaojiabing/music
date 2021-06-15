@@ -5,7 +5,7 @@
       <p class="desc">{{details.description}}</p>
     </div>
     <div class="songlist" v-for="(item,index) in songList" :key="index">
-      <p >{{item.name}}</p>
+      <a href=""><p class="songName">{{item.name}}</p></a>
     </div>
   </div>
 </template>
@@ -32,9 +32,6 @@ export default{
   },
   mounted () {
     
-    
-    // console.log(this.songList);
-    
   },
   watch: {
   },
@@ -52,17 +49,22 @@ export default{
 }
 </script>
 <style scoped>
-
+  
   .introduction{
     width: 95%;
     margin: 0 auto;
     /* height: 80px;  */
   }
   .introduction .title{
+    width: 300px;
+    margin: 0 auto;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
     color: #8a7724;
+    overflow: hidden;
+    white-space:nowrap;
+		text-overflow: ellipsis;
   }
   .introduction .desc{
     text-indent: 2em;
@@ -71,5 +73,13 @@ export default{
     -webkit-line-clamp: 2;
     overflow: hidden;
 		text-overflow: ellipsis;
+  }
+  .songName{
+    /* width: 100%; */
+    height: 40px;
+    margin-left: 30px;
+    line-height: 40px;
+    font-size: 22px;
+  
   }
 </style>

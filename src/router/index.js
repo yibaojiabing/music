@@ -4,6 +4,7 @@ import singer from "../views/singer.vue"
 import topList from "../views/topList.vue"  
 import search from "../views/search.vue"
 import songListDetails from "../components/songList/songListDetails.vue"
+import singerDetails from '../components/singerDetails/singerDetails.vue'
 const routes = [
   {
     path: "/",
@@ -15,7 +16,7 @@ const routes = [
   },
   {
     path: "/singer",
-    component: singer
+    component: singer,
   },
   {
     path: "/top-list",
@@ -28,6 +29,10 @@ const routes = [
   {
     path: "/songListDetails/:id",
     component: songListDetails
+  },
+  {
+    path: '/singerdetails/:id',
+    component: singerDetails
   }
 ]
 
