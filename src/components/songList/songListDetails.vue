@@ -27,8 +27,8 @@ export default{
       this.song = this.details.trackIds;
       console.log(this.details);
     })
-    this.songList = this.getSonglist(this.song)
-    console.log(this.songList);
+    this.songList = await this.getSonglist(this.song)
+    console.log(this.songList)
   },
   mounted () {
     
@@ -36,10 +36,10 @@ export default{
   watch: {
   },
   methods: {
-    getSonglist(ids){
+    async getSonglist(ids){
       let list = []
       for(let i=0;i<ids.length;i++){
-        getSongList(ids[i].id).then((res)=>{
+        await getSongList(ids[i].id).then((res)=>{
           list.push(res.data.songs[0])
         })
       }
