@@ -1,12 +1,12 @@
 <template>
   <div class="toplist">
-    <div class="listItem" v-for="(item,index) in toplist" v-if="toplist.length" >
-      <a :href="item.id">
+    <div class="listItem" v-for="(item,index) in toplist" >
+      <a :href="item.id" @click="topListItem(index)">
         <div class="photo"><img :src="item.coverImgUrl" alt=""></div>
         <div class="content" >
-          <p>1. {{songlist[index].[0].name}}</p>
-          <p>2. {{songlist[index].[1].name}}</p>
-          <p>3. {{songlist[index].[2].name}}</p>
+          <p>1. {{songlist[index][0].name}}</p>
+          <p>2. {{songlist[index][1].name}}</p>
+          <p>3. {{songlist[index][2].name}}</p>
         </div>
       </a>
     </div>
@@ -29,17 +29,21 @@ export default{
       this.toplist = res.data.list
     })
     console.log(this.toplist);
-    this.getSonglist()
+    await this.getSonglist()
     console.log(this.songlist);
     
   },
   methods: {
-    async getSonglist(){
+    getSonglist(){
       for(let i=0;i<this.toplist.length;i++){
-        await getTopListDetails(this.toplist[i].id).then((res)=>{
+          getTopListDetails(this.toplist[i].id).then((res)=>{
           this.songlist.push(res.data.playlist.tracks)
         })
       }
+    },
+    topListItem(index){
+      this.$router.push("/topListDetails/"+this.toplist[index].id)
+      console.log(id);
     }
   }
 }

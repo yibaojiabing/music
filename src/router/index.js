@@ -5,6 +5,7 @@ import topList from "../views/topList.vue"
 import search from "../views/search.vue"
 import songListDetails from "../components/songList/songListDetails.vue"
 import singerDetails from '../components/singerDetails/singerDetails.vue'
+import topListDetails from '../components/songList/topListDetails.vue'
 const routes = [
   {
     path: "/",
@@ -33,6 +34,10 @@ const routes = [
   {
     path: '/singerdetails/:id',
     component: singerDetails
+  },
+  {
+    path: '/topListDetails/:id',
+    component: topListDetails
   }
 ]
 
