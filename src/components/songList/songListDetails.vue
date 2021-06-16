@@ -5,7 +5,7 @@
       <p class="desc">{{details.description}}</p>
     </div>
     <div class="songlist" v-for="(item,index) in songList" :key="index">
-      <a href=""><p class="songName">{{item.name}}</p></a>
+      <a href=""><p class="songName">{{item.name}}<span class="singer">-----{{item.ar[0].name}}</span></p></a>
     </div>
   </div>
 </template>
@@ -27,8 +27,9 @@ export default{
       this.song = this.details.trackIds;
       console.log(this.details);
     })
-    this.songList = this.getSonglist(this.song)
-    console.log(this.songList);
+    this.songList = await this.getSonglist(this.song)
+    console.log(this.songList)
+    
   },
   mounted () {
     
@@ -36,10 +37,10 @@ export default{
   watch: {
   },
   methods: {
-     getSonglist(ids){
+    async getSonglist(ids){
       let list = []
       for(let i=0;i<ids.length;i++){
-         getSongList(ids[i].id).then((res)=>{
+        await getSongList(ids[i].id).then((res)=>{
           list.push(res.data.songs[0])
         })
       }
@@ -79,7 +80,11 @@ export default{
     height: 40px;
     margin-left: 30px;
     line-height: 40px;
-    font-size: 22px;
+    font-size: 18px;
   
+  }
+  .singer{
+    margin-left: 25px;
+    font-size: 14px;
   }
 </style>
