@@ -27,12 +27,14 @@ export default{
     mounted(){
         //创建BScroll对象
         this.scroll = new BScroll(this.$refs.wra,{
-            // probeType: this.probeType,
-            // click: true,
-            // pullUpLoad: true,
-            // observeDOM: true,
-            // observeImage: true
+            probeType: this.probeType,
+            click: true,
+            pullUpLoad: true,
+            observeDOM: true,
+            observeImage: true
         })
+        console.log(this.scroll);
+        
     //     //监听滚动位置
     //     this.scroll.on("scroll",(position)=>{
     //         this.$emit('scroll',position)

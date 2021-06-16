@@ -36,10 +36,10 @@ export default{
   watch: {
   },
   methods: {
-    getSonglist(ids){
+     getSonglist(ids){
       let list = []
       for(let i=0;i<ids.length;i++){
-        getSongList(ids[i].id).then((res)=>{
+         getSongList(ids[i].id).then((res)=>{
           list.push(res.data.songs[0])
         })
       }

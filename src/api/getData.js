@@ -31,3 +31,11 @@ export function getSingerDetails(id){
 export function getSingerHotMusic(id){
   return getForId("/artist/top/song",id)
 }
+//获取排行榜数据
+export function getTopList(){
+  return get("/toplist")
+}
+//获取排行榜详细数据
+export function getTopListDetails(id){
+  return getForId("/playlist/detail",id)
+}
